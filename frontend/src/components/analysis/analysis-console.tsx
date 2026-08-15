@@ -14,6 +14,7 @@ import {
 import { DimensionChart } from "@/components/comparison/dimension-chart";
 import { WeightControls } from "@/components/controls/weight-controls";
 import { EvidencePanel } from "@/components/evidence/evidence-panel";
+import { ScoreLandscape3D } from "@/components/visualization/score-landscape-3d";
 import { Button } from "@/components/ui/button";
 import {
   BACKEND_CONFIGURATION,
@@ -367,6 +368,8 @@ export function AnalysisConsole({ initialSnapshot }: { initialSnapshot: DatasetS
           onChange={setWeights}
         />
       </section>
+
+      {result ? <ScoreLandscape3D result={result} /> : null}
 
       {result ? (
         <EvidencePanel
